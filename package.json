@@ -1,0 +1,42 @@
+{
+  "name": "devscripts-poc",
+  "version": "0.0.0",
+  "bin": {
+    "igdev": "./bin/index.js"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild src/main.ts --outfile=bin/index.js --bundle --platform=node --external:cfonts --target=node20",
+    "prepare": "npm run build",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec \"npm run build\"\n",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "20.14.8",
+    "@types/prompts": "^2.4.9",
+    "@types/yargs": "^17.0.33",
+    "esbuild": "^0.23.0",
+    "eslint": "^9.8.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1",
+    "vitest": "^2.0.5"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^5.3.8",
+    "colors": "^1.4.0",
+    "lodash": "^4.17.21",
+    "node-xlsx": "^0.24.0",
+    "yargs": "^17.7.2"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts"
+  }
+}
