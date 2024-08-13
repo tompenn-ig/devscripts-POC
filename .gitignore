@@ -3,3 +3,4 @@ bin
 .idea
 
 src/**/*.js
+.DS_Store
